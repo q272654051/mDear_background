@@ -24,26 +24,26 @@
   <body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="#"><b>市研产品管理系统</a>
+        <a href="#"><b>MD后台管理系统</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
-        <p class="login-box-msg">市研产品管理系统</p>
+        <p class="login-box-msg">MD后台管理系统</p>
         <form action="javaScript:;;" method="post" name="userForm" id="userForm">
           <div class="form-group has-feedback">
             <input type="text" class="form-control" name="userName" id="userName" placeholder="用户名" />
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="密码" name="pwd" value="pwd"/>
+            <input type="password" class="form-control" placeholder="密码" name="pwd" id="pwd"/>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">
             <div class="col-xs-8">
-              <div class="checkbox icheck">
+              <!-- <div class="checkbox icheck">
                 <label>
                   <input type="checkbox">记住密码
                 </label>
-              </div>
+              </div> -->
             </div><!-- /.col -->
             <div class="col-xs-4">
               <button type="submit" onclick="login()" class="btn btn-primary btn-block btn-flat"  id="loginbtn">登录</button>

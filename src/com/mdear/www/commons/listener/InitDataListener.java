@@ -10,11 +10,9 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.ServletContextAware;
 
-import com.mdear.www.service.ICityService;
 import com.mdear.www.service.ICodeService;
 import com.mdear.www.service.IMenuService;
 import com.mdear.www.service.IUserService;
-import com.mdear.www.vo.CityTable;
 import com.mdear.www.vo.Code;
 import com.mdear.www.vo.Menu;
 import com.mdear.www.vo.User;
@@ -27,8 +25,8 @@ import com.mdear.www.vo.User;
 public class InitDataListener implements InitializingBean, ServletContextAware{
     @Autowired
     private IUserService userService;
-//    @Autowired
-//    private ICodeService codeService;
+    @Autowired
+    private ICodeService codeService;
     @Autowired
     private IMenuService menuService;
 //    @Autowired
@@ -48,13 +46,13 @@ public class InitDataListener implements InitializingBean, ServletContextAware{
         context.setAttribute("userId_map", userId_map);
         context.setAttribute("user_list", user_list);
         
-//        Map<String,Code> code_map = new HashMap<String,Code>();
-//        List<Code> code_list = codeService.findByHQLQuery("from Code c where c.dmid = 1004");
-//        for(Code code : code_list){
-//            code_map.put(code.getDmz()+"", code);
-//        }
-//        context.setAttribute("code_map", code_map);
-//        context.setAttribute("code_list", code_list);
+        Map<String,Code> code_map = new HashMap<String,Code>();
+        List<Code> code_list = codeService.findByHQLQuery("from Code c where c.dmid = 1004");
+        for(Code code : code_list){
+            code_map.put(code.getDmz()+"", code);
+        }
+        context.setAttribute("code_map", code_map);
+        context.setAttribute("code_list", code_list);
         
         //获取所有菜单
         Map<String,Menu> menu_map = new HashMap<String,Menu>();

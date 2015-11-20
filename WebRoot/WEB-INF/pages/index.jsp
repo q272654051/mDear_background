@@ -20,7 +20,7 @@
 <meta charset="UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>市研产品管理系统</title>
+<title>MD后台管理系统</title>
 <!-- Tell the browser to be responsive to screen width -->
 <meta
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
@@ -32,27 +32,27 @@
 <link href="font-awesome-4.3.0/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css" />
 <!-- Ionicons 2.0.0 -->
-<link href="js/style/ionicons.min.css" rel="stylesheet" type="text/css" />
+<link href="content/js/style/ionicons.min.css" rel="stylesheet" type="text/css" />
 <!-- Theme style -->
-<link href="dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
-<link href="dist/css/skins/_all-skins.min.css" rel="stylesheet"
+<link href="content/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+<link href="content/dist/css/skins/_all-skins.min.css" rel="stylesheet"
 	type="text/css" />
 <!-- iCheck -->
-<link href="plugins/iCheck/flat/blue.css" rel="stylesheet"
+<link href="content/plugins/iCheck/flat/blue.css" rel="stylesheet"
 	type="text/css" />
 <!-- Morris chart -->
-<link href="plugins/morris/morris.css" rel="stylesheet" type="text/css" />
+<link href="content/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
 <!-- jvectormap -->
-<link href="plugins/jvectormap/jquery-jvectormap-1.2.2.css"
+<link href="content/plugins/jvectormap/jquery-jvectormap-1.2.2.css"
 	rel="stylesheet" type="text/css" />
 <!-- Date Picker -->
-<link href="plugins/datepicker/datepicker3.css" rel="stylesheet"
+<link href="content/plugins/datepicker/datepicker3.css" rel="stylesheet"
 	type="text/css" />
 <!-- Daterange picker -->
-<link href="plugins/daterangepicker/daterangepicker-bs3.css"
+<link href="content/plugins/daterangepicker/daterangepicker-bs3.css"
 	rel="stylesheet" type="text/css" />
 <!-- bootstrap wysihtml5 - text editor -->
-<link href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"
+<link href="content/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"
 	rel="stylesheet" type="text/css" />
 </head>
 <!-- 皮肤可以通过js调用动态加载 -->
@@ -63,8 +63,8 @@
 		<header class="main-header">
 			<!-- Logo -->
 			<a onclick="backpage()" class="logo" id="abc"> <!-- mini logo for sidebar mini 50x50 pixels -->
-				<span class="logo-mini">市研管理</span> <!-- logo for regular state and mobile devices -->
-				<span class="logo-lg"><b>市研产品管理系统</b></span>
+				<span class="logo-mini">后台管理</span> <!-- logo for regular state and mobile devices -->
+				<span class="logo-lg"><b>MD后台管理系统</b></span>
 			</a>
 			<!-- Header Navbar: style can be found in header.less -->
 			<nav class="navbar navbar-static-top" role="navigation">
@@ -95,10 +95,10 @@
 						<li class="dropdown user user-menu">
 							<a href="#" class="dropdown-toggle" > 
 								<c:if test="${sessionScope.user_info.gender==1 }">
-										<img src="dist/img/gile.jpg" class="user-image" alt="User Image" />
+										<img src="content/dist/img/gile.jpg" class="user-image" alt="User Image" />
 								</c:if> 
 								<c:if test="${sessionScope.user_info.gender==0 }">
-										<img src="dist/img/boy.jpg" class="user-image" alt="User Image" />
+										<img src="content/dist/img/boy.jpg" class="user-image" alt="User Image" />
 								</c:if> 
 								<span class="hidden-xs">${sessionScope.user_info.userName }</span>
 							</a>
@@ -156,10 +156,11 @@
 					<c:forEach items="${roleMenu_list }" var="roleMenu">
 						<c:forEach items="${menu_list }" var="menu">
 							<c:if test="${roleMenu.menuId == menu.id && menu.pid =='0' }">
-								<li class="treeview"><a href="javascript:;;"
+								<li class="treeview">
+									<a href="javascript:;;"
 									url="${menu.url }"> <i class="fa"></i> <span>${menu.menuname }</span>
 										<i class="fa fa-angle-left pull-right"></i>
-								</a>
+									</a>
 									<ul class="treeview-menu">
 										<c:forEach items="${menu_list }" var="sub_menu">
 											<c:if test="${sub_menu.pid == menu.id }">
@@ -171,7 +172,8 @@
 												</c:forEach>
 											</c:if>
 										</c:forEach>
-									</ul></li>
+									</ul>
+								</li>
 							</c:if>
 						</c:forEach>
 					</c:forEach>
@@ -184,64 +186,64 @@
 		<!-- 頁面底部 -->
 		<footer class="main-footer">
 			<div class="pull-right hidden-xs">
-				<b>Version</b> 2.2.0
+				<b>Version</b> 1.0.0
 			</div>
-			<strong>Copyright &copy; 2014-2015 <a
-				href="javascript:void(0);">yunfangdata.com</a>.
+			<strong>Copyright &copy; 2015-2016 <a
+				href="javascript:void(0);">mdear.com</a>.
 			</strong> All rights reserved.
 		</footer>
 	</div>
 	<!-- jQuery 2.1.4 -->
 </body>
 <!-- jQuery 2.1.4 -->
-<script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="content/plugins/jQuery/jQuery-2.1.4.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="js/style/jquery-ui.min.js" type="text/javascript"></script>
+<script src="content/js/style/jquery-ui.min.js" type="text/javascript"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script type="text/javascript">
 	$.widget.bridge('uibutton', $.ui.button);
 </script>
 <!-- Bootstrap 3.3.2 JS -->
-<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="content/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <!-- <!-- Morris.js charts 折线图 -->
 <script src="js/style/raphael-min.js"></script>
-<script src="plugins/morris/morris.min.js" type="text/javascript"></script>
+<script src="content/plugins/morris/morris.min.js" type="text/javascript"></script>
 <!-- Sparkline 迷你图-->
-<script src="plugins/sparkline/jquery.sparkline.min.js"
+<script src="content/plugins/sparkline/jquery.sparkline.min.js"
 	type="text/javascript"></script>
 <!-- DATA TABES SCRIPT 数据排序，上下一页-->
-<script src="plugins/datatables/jquery.dataTables.min.js"
+<script src="content/plugins/datatables/jquery.dataTables.min.js"
 	type="text/javascript"></script>
-<script src="plugins/datatables/dataTables.bootstrap.min.js"
+<script src="content/plugins/datatables/dataTables.bootstrap.min.js"
 	type="text/javascript"></script>
 <!-- jvectormap 地图 -->
-<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"
+<script src="content/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"
 	type="text/javascript"></script>
-<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"
+<script src="content/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"
 	type="text/javascript"></script>
 <!-- jQuery Knob Chart 旋转按钮-->
-<script src="plugins/knob/jquery.knob.js" type="text/javascript"></script>
+<script src="content/plugins/knob/jquery.knob.js" type="text/javascript"></script>
 <!-- <!-- 日期选择器 -->
-<script src="js/style/moment.min.js" type="text/javascript"></script>
-<script src="plugins/daterangepicker/daterangepicker.js"
+<script src="content/js/style/moment.min.js" type="text/javascript"></script>
+<script src="content/plugins/daterangepicker/daterangepicker.js"
 	type="text/javascript"></script>
 <!-- 日期选择器 -->
-<script src="plugins/datepicker/bootstrap-datepicker.js"
+<script src="content/plugins/datepicker/bootstrap-datepicker.js"
 	type="text/javascript"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script
-	src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"
+	src="content/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"
 	type="text/javascript"></script>
 <!-- Slimscroll -->
-<script src="plugins/slimScroll/jquery.slimscroll.min.js"
+<script src="content/plugins/slimScroll/jquery.slimscroll.min.js"
 	type="text/javascript"></script>
 <!-- FastClick -->
-<script src="plugins/fastclick/fastclick.min.js" type="text/javascript"></script>
+<script src="content/plugins/fastclick/fastclick.min.js" type="text/javascript"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/app.min.js" type="text/javascript"></script>
+<script src="content/dist/js/app.min.js" type="text/javascript"></script>
 
 <!-- user js -->
-<script src="js/base.js" type="text/javascript"></script>
+<script src="content/js/base.js" type="text/javascript"></script>
 <!-- 消息未读提醒，循环显示未读消息 -->
 <script type="text/javascript">
 	$(function() {
@@ -261,12 +263,12 @@
 	$("#img").val();
 </script>
 <!-- 个人消息 -->
-<script type="text/javascript" src="js/message/my_info.js"></script>
+<script type="text/javascript" src="content/js/message/my_info.js"></script>
 <!-- 获取时间 -->
 <script>
 	setInterval(
 			"jnkc.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",
 			1000);
 </script>
-<script type="text/javascript" src="js/homepage/homepage.js"></script>
+<script type="text/javascript" src="content/js/homepage/homepage.js"></script>
 </html>

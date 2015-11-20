@@ -20,7 +20,7 @@ public class User implements java.io.Serializable {
 	private String userName;   //用户名
 	private String pwd;        //密码
 	private Integer status;    //状态
-	private Integer gender;    //级别
+	private Integer gender;    //性别
 
 	// Constructors
 
