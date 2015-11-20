@@ -1,0 +1,38 @@
+body{
+	/* font-family: 'Î¢ÈíÑÅºÚ'; */
+}
+
+a:ACTIVE{
+	text-decoration: none;
+	color: black;
+}
+a:AFTER{
+	text-decoration: none;
+	color: black;
+}
+a:LINK{
+	text-decoration: none;
+	color: black;
+}
+a:VISITED{
+	text-decoration: none;
+	color: black;
+}
+a:HOVER{
+	text-decoration: none;
+	color: black;
+}
+
+ul li{
+	list-style-type: none;
+	margin-bottom: 5px;
+}
+ul{
+	margin-left: -25px;
+}
+table{
+	padding:0px;
+}
+thead{
+	font-weight: bold;
+}

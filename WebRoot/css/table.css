@@ -1,0 +1,8 @@
+th td{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;word-break: break-all; text-align:left; }
+.date_span{width:40px;}
+.td_inpt{width:140px;}
+.td_label{font:16px Microsoft YaHei, arial;text-align: right; line-height:40px; height:40px;}
+.mini{width:20px;}
+.md{width:60px;}
+.lg{width:80px;}
+.hg{width:180px;}
